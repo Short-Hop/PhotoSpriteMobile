@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Image, Button } from 'react-native';
 import logo from "../assets/logo_transparent.png"
+import nodejs from 'nodejs-mobile-react-native';
 
 export default class Home extends Component {
 
     static navigationOptions = {
         title: "Home",
     };
+
+    componentWillMount() {
+        nodejs.start('main.js');
+        nodejs.channel.addListener(
+            'message',
+            (msg) => {
+                alert('From node: ' + msg);
+            },
+            this
+        );
+    }
     
     render() {
         return (

@@ -39,7 +39,7 @@ export default class Uploader extends Component {
             } else if (response.customButton) {
                 console.log('User tapped custom button: ', response.customButton);
             } else {
-                const source = { uri: response.uri };
+                const source = response.uri;
 
                 this.props.navigation.navigate("Converter", {url: source})
             }
@@ -49,10 +49,9 @@ export default class Uploader extends Component {
     render() {
         return (
             <View>
-                <Text>Converter Page Fam</Text>
+                <Text>Uploader Page Fam</Text>
 
                 <Button title="Select Image" color="#000000" onPress={this.uploadImage} />
-                <Image style={{ width: 50, height: 50 }} source={this.state.imageUrl} />
             </View>
         );
     }
