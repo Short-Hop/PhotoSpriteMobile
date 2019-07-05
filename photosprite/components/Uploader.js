@@ -16,10 +16,6 @@ options = {
 // type Props = {};
 export default class Uploader extends Component {
 
-    state = {
-        imageUrl: "",
-    }
-
     static navigationOptions = {
         title: "Uploader",
     };
@@ -31,7 +27,6 @@ export default class Uploader extends Component {
         ImagePicker.showImagePicker(options, (response) => {
             console.log('Response = ', response);
 
-
             if (response.didCancel) {
                 console.log('User cancelled image picker');
             } else if (response.error) {
@@ -41,7 +36,7 @@ export default class Uploader extends Component {
             } else {
                 const source = response.uri;
 
-                this.props.navigation.navigate("Converter", {url: source})
+                this.props.navigation.navigate("Converter", {url: source, height: response.height, width: response.width})
             }
         });
     }
