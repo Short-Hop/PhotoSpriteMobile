@@ -7,10 +7,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "braces": "^3.0.2",
     "jimp": "^0.6.4",
+    "mem": "^5.1.1",
     "nodejs-mobile-react-native": "^0.4.3",
     "react": "16.8.3",
-    "react-native": "0.59.9",
+    "react-native": "^0.60.0",
     "react-native-color-palette": "^2.0.3",
     "react-native-dialog-input": "^1.0.7",
     "react-native-fs": "^2.13.3",
